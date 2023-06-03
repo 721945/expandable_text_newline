@@ -159,12 +159,12 @@ class ExpandableTextState extends State<ExpandableText>
 
     final link = TextSpan(
       children: [
-        if (!_expanded)
-          TextSpan(
-            text: '\u2026 ',
-            style: widget.linkEllipsis ? linkTextStyle : effectiveTextStyle,
-            recognizer: widget.linkEllipsis ? _linkTapGestureRecognizer : null,
-          ),
+        // if (!_expanded)
+        //   TextSpan(
+        //     text: '\u2026 ',
+        //     style: widget.linkEllipsis ? linkTextStyle : effectiveTextStyle,
+        //     recognizer: widget.linkEllipsis ? _linkTapGestureRecognizer : null,
+        //   ),
         if (linkText.length > 0)
           TextSpan(
             style: effectiveTextStyle,
@@ -174,7 +174,7 @@ class ExpandableTextState extends State<ExpandableText>
                   text: ' ',
                 ),
               TextSpan(
-                text: linkText,
+                text: '\n$linkText',
                 style: linkTextStyle,
                 recognizer: _linkTapGestureRecognizer,
               ),
